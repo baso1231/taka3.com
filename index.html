@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon (গুগলে সার্চ রেজাল্টে ডোমেইনের আগে এবং ব্রাউজার ট্যাবে দেখানোর জন্য নির্দিষ্ট লোগো) -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co.com/RL8B9m8/12901-2.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="https://i.ibb.co.com/RL8B9m8/12901-2.jpg">
+    
+    <title>TAKA3 অ্যাপ ডাউনলোড এবং লগইন নিবন্ধন - অফিসিয়াল সাইট</title>
+    
+    <!-- Google Search Console Verification & Advanced SEO Meta Tags -->
+    <meta name="google-site-verification" content="এখানে_আপনার_গুগল_সার্চ_কনসোল_ভেরিফিকেশন_কোডটি_বসাবেন">
+    <meta name="description" content="TAKA3 বাংলাদেশ অফিসিয়াল সাইট। এখানে থেকে খুব সহজেই TAKA3 অ্যাপ ডাউনলোড, লগইন এবং নতুন অ্যাকাউন্ট নিবন্ধন করুন।">
+    <meta name="keywords" content="TAKA3, TAKA3 App, TAKA3 Login, TAKA3 Download, TAKA3 Bangladesh, টাকা৩, TAKA3 Site">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://taka3.site">
+
+    <!-- Open Graph / Social Media Meta Tags for better indexing -->
+    <meta property="og:title" content="TAKA3 অ্যাপ ডাউনলোড এবং লগইন নিবন্ধন">
+    <meta property="og:description" content="TAKA3 বাংলাদেশ লগইন, নিবন্ধন এবং মোবাইল অ্যাপ ডাউনলোড করুন।">
+    <meta property="og:url" content="https://taka3.site">
+    <meta property="og:type" content="website">
+
+    <!-- Google Structured Data (Schema.org) for Brand / Organization SEO (সরাসরি কোডের ভেতর যোগ করা হয়েছে) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TAKA3",
+      "alternateName": ["টাকা৩", "TAKA3 Site", "TAKA3 Bangladesh"],
+      "url": "https://taka3.site"
+    }
+    </script>
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #880e15; /* ওয়েবসাইটের মূল ব্যাকগ্রাউন্ড লাল */
+            color: #ffffff;
+            padding-top: 55px;
+            padding-bottom: 130px;
+        }
+        /* Top Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #880e15;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .top-favicon {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn {
+            padding: 5px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-login {
+            background-color: #ffeb3b;
+            color: #b71c1c;
+        }
+        .btn-signup {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        /* Top Banner Section */
+        .top-banner-container {
+            padding: 10px 10px 0 10px;
+        }
+        .top-banner-card {
+            background: #880e15; 
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Quick Action Icons */
+        .quick-actions {
+            display: flex;
+            justify-content: space-around;
+            background: #880e15; 
+            padding: 15px 5px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .action-item i {
+            font-size: 18px;
+            margin-bottom: 5px;
+            background: #a51d24;
+            color: #ffeb3b;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        /* Banner & Offer Sections */
+        .content-container {
+            padding: 0 10px 10px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .offer-card {
+            background: #880e15; 
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .offer-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .offer-title i {
+            color: #ffeb3b;
+            font-size: 14px;
+        }
+
+        /* ছবি যাতে কার্ডের পুরো জায়গা জুড়ে নিখুঁতভাবে ফিট হয় এবং বর্ডার না থাকে */
+        .banner-img-container {
+            width: 100%;
+            height: 180px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: block;
+            background-color: #5c080e;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            display: block;
+        }
+
+        /* Details Content Box */
+        .offer-details {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #f1f1f1;
+            line-height: 1.6;
+            background-color: #720b11; 
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .detail-link {
+            color: #ffeb3b;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 6px;
+        }
+
+        .detail-heading {
+            font-weight: bold;
+            color: #ffeb3b;
+            margin-top: 8px;
+            margin-bottom: 3px;
+        }
+
+        /* Table inside offer details */
+        .offer-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .offer-table th, .offer-table td {
+            border: 1px solid #ff9800;
+            padding: 5px;
+        }
+
+        .offer-table th {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .offer-table td {
+            background-color: #880e15; 
+            color: #ffffff;
+        }
+
+        .offer-footer {
+            font-size: 11px;
+            color: #e0e0e0;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-6px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .bottom-download-bar {
+            position: fixed;
+            bottom: 55px;
+            left: 0;
+            width: 100%;
+            background: #880e15;
+            padding: 10px 15px;
+            text-align: center;
+            z-index: 999;
+            box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .download-btn {
+            background-color: #ffeb3b;
+            color: #b71c1c;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-decoration: none;
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #880e15;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        .nav-item i {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+        .nav-item.active {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="header">
+        <div class="header-left">
+            <!-- হেডার লোগো অপরিবর্তিত রাখা হয়েছে -->
+            <img src="https://i.ibb.co.com/m3cVy4m/12910-removebg-preview.png" alt="Logo" class="top-favicon">
+        </div>
+        <div class="header-right">
+            <a href="https://taka3.site" class="btn btn-login">লগইন</a>
+            <a href="https://taka3.site" class="btn btn-signup">সাইন আপ</a>
+        </div>
+    </div>
+
+    <!-- টপ ব্যানার -->
+    <div style="margin-top: 10px;"></div>
+    <div class="top-banner-container">
+        <div class="top-banner-card">
+            <div class="offer-title">
+                <span>TAKA3 বিশেষ ঘোষণা: আপনার জমার উপরে ১৬৬৬৬ টাকা বোনাস পেতে পারেন </span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <a href="https://taka3.site" class="banner-img-container">
+                <img src="13073.jpg" alt="Top Banner" class="banner-img">
+            </a>
+            <div class="offer-footer">
+                <i class="fa-regular fa-clock"></i> 2026/08/24-Long term
+            </div>
+        </div>
+    </div>
+
+    <!-- ৪টি বাটন -->
+    <div class="quick-actions">
+        <a href="https://taka3.site" class="action-item">
+            <i class="fa-solid fa-wallet"></i>
+            <span>ডিপোজিট</span>
+        </a>
+        <a href="https://taka3.site" class="action-item">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <span>উইথড্র</span>
+        </a>
+        <a href="https://taka3.site" class="action-item">
+            <i class="fa-solid fa-crown"></i>
+            <span>ভিআইপি</span>
+        </a>
+        <a href="https://taka3.site" class="action-item">
+            <i class="fa-solid fa-headset"></i>
+            <span>সাপোর্ট</span>
+        </a>
+    </div>
+
+    <!-- অন্যান্য কার্ডসমূহ -->
+    <div class="content-container">
+        
+        <!-- কার্ড ২ -->
+        <div class="offer-card">
+            <div class="offer-title">
+                <span>TAKA3 অ্যাপ বোনাস ৮৯,১৯৯ ডাউনলোড বোনাস </span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <a href="https://taka3.site" class="banner-img-container">
+                <img src="13073jpg" alt="Offer 2" class="banner-img">
+            </a>
+            <div class="offer-footer">
+                <i class="fa-regular fa-clock"></i> 2026/08/24-Long term
+            </div>
+        </div>
+
+        <!-- কার্ড ৩ -->
+        <div class="offer-card">
+            <div class="offer-title">
+                <span>TAKA3 অফার বিবরণ</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <a href="https://taka3.site" class="banner-img-container">
+                <img src="13069.jpg" alt="Offer 3" class="banner-img">
+            </a>
+            
+            <div class="offer-details">
+                <a href="https://taka3.site" class="detail-link"><i class="fa-solid fa-mobile-screen"></i> ক্লিক করুন: WhatsApp</a><br>
+                <a href="https://taka3.site" class="detail-link"><i class="fa-solid fa-paper-plane"></i> ক্লিক করুন: Telegram</a>
+                
+                <div class="detail-heading">🔺 অফার বিস্তারিত</div>
+                <p>* প্রতিটি রেড এনভেলপের মোট পরিমাণ ২,০০,০০০ টাকা। একজন সদস্য সর্বোচ্চ ৮৮৮৮,৮৮৮ পর্যন্ত রেড এনভেলপ পেতে পারেন।</p>
+                
+                <div class="detail-heading">কিভাবে এটি পেতে</div>
+                <p>✅ নির্ধারিত সময়ে লগইন করুন এবং হোমপেজের ডান নিচের লাল আইকনে ক্লিক করুন বোনাস পাওয়ার জন্য।</p>
+                <p>✅ আপনি যদি নির্ধারিত সময় মিস করেন, তবে আপনাকে পরবর্তী চক্র শুরু হওয়া পর্যন্ত অপেক্ষা করতে হবে।</p>
+
+                <table class="offer-table">
+                    <tr>
+                        <th>শর্তাধীন</th>
+                        <th>সময়</th>
+                        <th>পুরস্কার</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">সকল সদস্য দ্বারা TAKA3 অ্যাপ ডাউনলোড করেছেন</td>
+                        <td>০০:০০-০০:৫৯</td>
+                        <td rowspan="10">ভাগ্যবান লাল খাম বোনাস পর্যন্ত হতে পারে ৮৮৮৮, ৮৮৮ আর আপনি আমানত, উত্তোলর বোনাস TAKA3 
+ ➡️ TAKA3 ডাউনলোড করুন, বিশাল পুরস্কার জিতে নিন! 
+
+➡️ এখনই ডাউনলোড করুন এবং জিতে নিন সর্বোচ্চ আকর্ষণীয় পুরস্কার!
+চমকপ্রদ অফার চলছেই—যত দ্রুত যোগ দেবেন, তত বেশি পুরস্কার! 
+
+➡️ নতুন ব্যবহারকারীদের জন্য বিশেষ সুবিধা
+
+TAKA3 অফিসিয়াল অ্যাপ ডাউনলোড করে রেজিস্ট্রেশন সম্পন্ন করুন এবং সঙ্গে সঙ্গে পান রেজিস্ট্রেশন বোনাস!
+
+➡️ অফিসিয়াল প্ল্যাটফর্ম থেকে TAKA3 ডাউনলোড করুন
+➡️রেজিস্ট্রেশন সম্পন্ন করে খেলা শুরু করুন
+➡️ পুরস্কার ১২ ঘণ্টার মধ্যে স্বয়ংক্রিয়ভাবে আপনার রিওয়ার্ড সেন্টারে পাঠানো হবে
+
+➡️ সুযোগ সীমিত, এখনই যোগ দিন!
+➡️ যত তাড়াতাড়ি ডাউনলোড, তত দ্রুত পুরস্কার!
+➡️ আপনার জন্য বিশেষ সুবিধা অপেক্ষা করছে!
+
+🔗 আজকের রিডিম কোড অপেক্ষা করছে!
+vip০                    ECHTNCIDK2QU
+vip১-৩               7BGKVNSQ
+vip৪-১০             XACNW
+vip১১-২০          
+vip২১-২৯         
+vip৩০-৩৬       
+
+✨TAKA3-এর সাথে শুরু হোক আপনার সৌভাগ্যর যাত্রা!</td>
+                    </tr>
+                    <tr><td>০২:০০-০২:৫৯</td></tr>
+                    <tr><td>০৪:০০-০৪:৫৯</td></tr>
+                    <tr><td>০৬:০০-০৬:৫৯</td></tr>
+                    <tr><td>০৮:০০-০৮:৫৯</td></tr>
+                    <tr><td>১০:০০-১০:৫৯</td></tr>
+                    <tr><td>১২:০০-১২:৫৯</td></tr>
+                    <tr><td>১৪:০০-১৪:৫৯</td></tr>
+                    <tr><td>১৬:০০-১৬:৫৯</td></tr>
+                    <tr><td>১৮:০০-১৮:৫৯</td></tr>
+                </table>
+
+                <div class="detail-heading" style="margin-top: 8px;">শর্তাবলী</div>
+                <p>১. প্রতিটি সদস্য কেবল একবারই এই বোনাস নিতে পারবেন। যদি একই আইপি ঠিকানা, ব্যাংক কার্ড বা মোবাইল নম্বর একাধিকবার ব্যবহৃত হয়। TAKA3 সমস্ত পুরস্কার প্রদান করবে।</p>
+
+                <div class="detail-heading">মোবাইল ব্যবহারকারীদের জন্য TAKA3 অ্যাপের ফিচারসমূহ</div>
+                <p>TAKA3 অ্যাপটি মূল প্ল্যাটফর্মের বিভিন্ন অংশকে একটি মোবাইল-বান্ধব লেআউটে সাজিয়েছে। ব্যবহারকারীরা ফোন বা ট্যাবলেট থেকে উপলব্ধ কন্টেন্ট ব্রাউজ করতে, তাদের অ্যাকাউন্ট ড্যাশবোর্ড খুলতে, নোটিফিকেশন পর্যালোচনা করতে এবং সাপোর্ট লিংকগুলো ব্যবহার করতে পারেন।</p>
+
+                <div class="detail-heading">কীভাবে TAKA3 APK ডাউনলোড এবং ইনস্টল করবেন</div>
+                <p>প্রথমে যাচাইকৃত TAKA3 ওয়েবসাইটটি খুলে তার অ্যান্ড্রয়েড অ্যাপ ডাউনলোডের জায়গাটি খুঁজে বের করুন। APK ফাইলটি শুধুমাত্র অফিসিয়াল পেজ থেকে ডাউনলোড করুন। ফাইলটি ডাউনলোড হওয়া শেষ হলে ব্রাউজার বা ফাইল ম্যানেজার থেকে এটি ইনস্টল করুন।</p>
+
+                <div class="detail-heading">সচরাচর জিজ্ঞাস্য (FAQ)</div>
+                <p><strong>* আমি কোথায় অফিসিয়াল TAKA3 অ্যাপ ডাউনলোড করতে পারব?</strong><br>যাচাইকৃত TAKA3 ওয়েবসাইট খুলুন এবং অফিসিয়াল অ্যাপ বিভাগে দেওয়া অ্যান্ড্রয়েড APK ডাউনলোড অপশনটি ব্যবহার করুন।</p>
+                <p><strong>* আমি কি আইফোনে TAKA3 APK ইনস্টল করতে পারি?</strong><br>না। APK ফাইলগুলো অ্যান্ড্রয়েডের জন্য তৈরি। আইফোন এবং আইপ্যাড ব্যবহারকারীরা ব্রাউজারের মাধ্যমে মোবাইল ওয়েবসাইট ব্যবহার করতে পারেন।</p>
+            </div>
+
+            <div class="offer-footer">
+                <i class="fa-regular fa-clock"></i> 2026/08/24-Long term
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Fixed Download Button -->
+    <div class="bottom-download-bar">
+        <a href="https://taka3.site" class="download-btn"><i class="fa-solid fa-download"></i> TAKA3 অ্যাপ ডাউনলোড করুন</a>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="https://taka3.site" class="nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="https://taka3.site" class="nav-item">
+            <i class="fa-solid fa-gift"></i>
+            <span>Promotion</span>
+        </a>
+        <a href="https://taka3.site" class="nav-item">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Invite</span>
+        </a>
+        <a href="https://t.me/" class="nav-item">
+            <i class="fa-solid fa-award"></i>
+            <span>Reward</span>
+        </a>
+        <a href="https://taka3.site" class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Member</span>
+        </a>
+    </div>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"7cae1553ec48478bb48315a40d3bf578","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
